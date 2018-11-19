@@ -1,0 +1,29 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2018-11-19 15:28:55 #1 store] 
+Database 'C:\Users\Morrrr\Documents\NetBeansProjects\ooadRefrigereter-UI_Up\objectdb\db\AccountDB.odb' is opened by 1600@DESKTOP-GP1K3NH
+
+[2018-11-19 15:28:55 #2 store] 
+Configuration path: ?
+
+[2018-11-19 15:28:55 #3 type] 
+Type Models.Account is not enhanced.
+
+[2018-11-19 15:28:55 #4 type] 
+Type Models.User is not enhanced.
+
+[2018-11-19 15:28:55 #5 type] 
+Type Models.Refrigerator is not enhanced.
+
+[2018-11-19 15:28:55 #6 type] 
+Type Models.addItem is not enhanced.
+
+[2018-11-19 15:28:55 #7 type] 
+Type Models.Item is not enhanced.
+
+[2018-11-19 15:28:55 #8 type] 
+Type Models.Vegerables is not enhanced.
+
+[2018-11-19 15:28:55 #9 type] 
+Type Models.BeerWineandSpirits is not enhanced.
+
