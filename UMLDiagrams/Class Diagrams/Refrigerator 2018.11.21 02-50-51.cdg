@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Refrigerator">
+  <ClassDiagramComponents>
+    <Class name="Account" package="Models" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="user_username" type="String" visibility="private"/>
+        <Field name="ImgAcc" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="user_username"/>
+          <Argument type="String" name="user_password"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getImgAcc" returnType="String" visibility="public"/>
+        <Method name="setImgAcc" returnType="void" visibility="public">
+          <Argument type="String" name="ImgAcc"/>
+        </Method>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getUser_username" returnType="String" visibility="public"/>
+        <Method name="setUser_username" returnType="void" visibility="public">
+          <Argument type="String" name="user_username"/>
+        </Method>
+        <Method name="setUser_password" returnType="void" visibility="public">
+          <Argument type="String" name="user_password"/>
+        </Method>
+        <Method name="getUser_password" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="addItem" package="Models" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="refrig" type="Refrigerator" visibility="private"/>
+        <Field name="item" type="Item" visibility="private"/>
+        <Field name="Amou" type="int" visibility="private"/>
+        <Field name="exp" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Item" name="item"/>
+          <Argument type="int" name="Amou"/>
+          <Argument type="Date" name="exp"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getRefrig" returnType="Refrigerator" visibility="public"/>
+        <Method name="setRefrig" returnType="void" visibility="public">
+          <Argument type="Refrigerator" name="refrig"/>
+        </Method>
+        <Method name="getItem" returnType="Item" visibility="public"/>
+        <Method name="setItem" returnType="void" visibility="public">
+          <Argument type="Item" name="item"/>
+        </Method>
+        <Method name="getAmou" returnType="int" visibility="public"/>
+        <Method name="setAmou" returnType="void" visibility="public">
+          <Argument type="int" name="Amou"/>
+        </Method>
+        <Method name="getExp" returnType="Date" visibility="public"/>
+        <Method name="setExp" returnType="void" visibility="public">
+          <Argument type="Date" name="exp"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BeerWineandSpirits" package="Models" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Beverages" package="Models" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FreshAndBekery" package="Models" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Item" package="Models" visibility="public" isAbstract="true" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="ImgItem" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="barcode" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="exd" type="String" visibility="private"/>
+        <Field name="mfd" type="String" visibility="private"/>
+        <Field name="shelves" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getShelves" returnType="String" visibility="public"/>
+        <Method name="setShelves" returnType="void" visibility="public">
+          <Argument type="String" name="shelves"/>
+        </Method>
+        <Method name="getImgItem" returnType="String" visibility="public"/>
+        <Method name="setImgItem" returnType="void" visibility="public">
+          <Argument type="String" name="ImgItem"/>
+        </Method>
+        <Method name="getBarcode" returnType="String" visibility="public"/>
+        <Method name="setBarcode" returnType="void" visibility="public">
+          <Argument type="String" name="barcode"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getExd" returnType="String" visibility="public"/>
+        <Method name="setExd" returnType="void" visibility="public">
+          <Argument type="String" name="exd"/>
+        </Method>
+        <Method name="getMfd" returnType="String" visibility="public"/>
+        <Method name="setMfd" returnType="void" visibility="public">
+          <Argument type="String" name="mfd"/>
+        </Method>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MeatAndSeefood" package="Models" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Others" package="Models" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PantryAndIngredients" package="Models" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Refrigerator" package="Models" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="long" visibility="private"/>
+        <Field name="refrig_id" type="String" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="item" type="List&lt;addItem&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="refrig_name"/>
+          <Argument type="String" name="refrig_band"/>
+          <Argument type="String" name="refrig_color"/>
+          <Argument type="String" name="refrig_size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="addItem" name="aItem"/>
+        </Method>
+        <Method name="getRefrig_id" returnType="String" visibility="public"/>
+        <Method name="setRefrig_id" returnType="void" visibility="public">
+          <Argument type="String" name="refrig_id"/>
+        </Method>
+        <Method name="getRefrig_name" returnType="String" visibility="public"/>
+        <Method name="setRefrig_name" returnType="void" visibility="public">
+          <Argument type="String" name="refrig_name"/>
+        </Method>
+        <Method name="getRefrig_band" returnType="String" visibility="public"/>
+        <Method name="setRefrig_band" returnType="void" visibility="public">
+          <Argument type="String" name="refrig_band"/>
+        </Method>
+        <Method name="getRefrig_color" returnType="String" visibility="public"/>
+        <Method name="setRefrig_color" returnType="void" visibility="public">
+          <Argument type="String" name="refrig_color"/>
+        </Method>
+        <Method name="getRefrig_size" returnType="String" visibility="public"/>
+        <Method name="setRefrig_size" returnType="void" visibility="public">
+          <Argument type="String" name="refrig_size"/>
+        </Method>
+        <Method name="getUser" returnType="User" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getId" returnType="long" visibility="public"/>
+        <Method name="getItem" returnType="List&lt;addItem&gt;" visibility="public"/>
+        <Method name="setItem" returnType="void" visibility="public">
+          <Argument type="List&lt;addItem&gt;" name="item"/>
+        </Method>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="long" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SnackAndDesserts" package="Models" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="User" package="Models" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="brithday" type="Date" visibility="private"/>
+        <Field name="status" type="int" visibility="private"/>
+        <Field name="cout" type="int" visibility="private"/>
+        <Field name="refrigerator" type="List&lt;Refrigerator&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getRefrigerator" returnType="List&lt;Refrigerator&gt;" visibility="public"/>
+        <Method name="addRefrig" returnType="void" visibility="public">
+          <Argument type="Refrigerator" name="refrig"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getBrithday" returnType="Date" visibility="public"/>
+        <Method name="setBrithday" returnType="void" visibility="public">
+          <Argument type="Date" name="brithday"/>
+        </Method>
+        <Method name="getStatus" returnType="int" visibility="public"/>
+        <Method name="setStatus" returnType="void" visibility="public">
+          <Argument type="int" name="status"/>
+        </Method>
+        <Method name="getCout" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vegerables" package="Models" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Refrige" package="refrige" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="input" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toHexadecimal" returnType="String" visibility="package" isStatic="true">
+          <Argument type="String" name="source"/>
+        </Method>
+        <Method name="toHexadecimal" returnType="String" visibility="package" isStatic="true">
+          <Argument type="byte[]" name="source"/>
+        </Method>
+        <Method name="toMD5Hash" returnType="String" visibility="package" isStatic="true">
+          <Argument type="String" name="source"/>
+        </Method>
+        <Method name="setRegister" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Date" name="brithday"/>
+        </Method>
+        <Method name="addItemRefrig" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="Refrigerator" name="refrig"/>
+          <Argument type="Item" name="item"/>
+          <Argument type="int" name="amou"/>
+          <Argument type="Date" name="date"/>
+        </Method>
+        <Method name="removeItemRefrig" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="Refrigerator" name="refrig"/>
+          <Argument type="Item" name="item"/>
+        </Method>
+        <Method name="setImage" returnType="void" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="checkItem" returnType="Item" visibility="public" isStatic="true">
+          <Argument type="String" name="barcode"/>
+        </Method>
+        <Method name="isLogin" returnType="User" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getUser" returnType="User" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="setFrid" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="refrig_name"/>
+          <Argument type="String" name="refrig_band"/>
+          <Argument type="String" name="refrig_color"/>
+          <Argument type="String" name="refrig_size"/>
+        </Method>
+        <Method name="removeFriges" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="Refrigerator" name="refrig"/>
+        </Method>
+        <Method name="gerFriges" returnType="Refrigerator" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="Refrigerator" name="refrig"/>
+        </Method>
+        <Method name="editFriges" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="Refrigerator" name="refrig"/>
+          <Argument type="String" name="refrig_name"/>
+          <Argument type="String" name="refrig_band"/>
+          <Argument type="String" name="refrig_color"/>
+          <Argument type="String" name="refrig_size"/>
+        </Method>
+        <Method name="editUser" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Date" name="brithday"/>
+        </Method>
+        <Method name="changePassword" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="curpassword"/>
+          <Argument type="String" name="newpassword"/>
+        </Method>
+        <Method name="forgetPass" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="addItem" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="barcode"/>
+          <Argument type="String" name="description"/>
+          <Argument type="int" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="item" source="Models.Refrigerator" target="Models.addItem" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;addItem&gt;"/>
+    <UseRelation source="Models.Refrigerator" target="Models.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.BeerWineandSpirits" target="Models.Item"/>
+    <HasRelation name="user" source="Models.Refrigerator" target="Models.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.Others" target="Models.Item"/>
+    <IsRelation name="is" source="Models.Beverages" target="Models.Item"/>
+    <UseRelation source="refrige.Refrige" target="refrige.Refrige" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.FreshAndBekery" target="Models.Item"/>
+    <UseRelation source="Models.User" target="refrige.Refrige" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.SnackAndDesserts" target="Models.Item"/>
+    <UseRelation source="Models.addItem" target="refrige.Refrige" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Models.addItem" target="Models.Item" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="refrig" source="Models.addItem" target="Models.Refrigerator" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="refrige.Refrige" target="Models.Item" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.PantryAndIngredients" target="Models.Item"/>
+    <HasRelation name="item" source="Models.addItem" target="Models.Item" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.User" target="Models.Account"/>
+    <IsRelation name="is" source="Models.Vegerables" target="Models.Item"/>
+    <HasRelation name="refrigerator" source="Models.User" target="Models.Refrigerator" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Refrigerator&gt;"/>
+    <UseRelation source="refrige.Refrige" target="Models.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Models.Refrigerator" target="Models.Item" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.MeatAndSeefood" target="Models.Item"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
