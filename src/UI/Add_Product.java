@@ -6,6 +6,7 @@
 package UI;
 
 import Models.*;
+import java.awt.event.KeyEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -26,6 +27,7 @@ public class Add_Product extends javax.swing.JFrame {
         this.refrig = refrig;
         this.user =user;
         updateData();
+  
     }
 private void updateData(){
         jLabel10.setText(refrig.getRefrig_id());
@@ -34,7 +36,8 @@ private void updateData(){
         jLabel16.setText("");
         setIconLabel(jLabel16, refrig);
         jLabel9.setText(user.getName());
-}
+      
+}       
          private void setIconLabel(JLabel label, Models.Refrigerator refrid) {
 
         String band = refrid.getRefrig_band();
@@ -229,6 +232,11 @@ private void updateData(){
         jButton6.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("ENTER");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton6MouseEntered(evt);
+            }
+        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -259,6 +267,13 @@ private void updateData(){
         );
 
         jTextField1.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        jTextField1.setFocusCycleRoot(true);
+        jTextField1.setFocusTraversalPolicyProvider(true);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Static/Refrigerator/icon-info-refrigerator.png"))); // NOI18N
 
@@ -407,6 +422,33 @@ private void updateData(){
             JOptionPane.showMessageDialog(null, "Input Barcode !!");
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton6MouseEntered
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+    
+                if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+                  Item item = refrige.Refrige.checkItem(jTextField1.getText());
+        if( !jTextField1.getText().equals("")){
+        if(item != null){
+            JOptionPane.showMessageDialog(null, "go to add product to Refrigerator !!");
+            this.dispose();
+            new Product_Manager(user,refrig,item).setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "no Barcode go add product !!");
+            this.dispose();
+            new New_Product(user,refrig,jTextField1.getText()).setVisible(true);
+        }
+        }else{            
+            JOptionPane.showMessageDialog(null, "Input Barcode !!");
+        }
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
