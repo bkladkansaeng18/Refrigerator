@@ -55,9 +55,7 @@ public class TAKE_PHOTO extends javax.swing.JFrame {
 		}
 		
 	}
-    public  void showImage(){
-       
-
+    public  void showImage(){      
         webcam.open();
         this.setImageButton(jToggleButton1, webcam.getImage());
     }

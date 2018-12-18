@@ -6,8 +6,13 @@
 package UI;
 
 import Models.User;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -16,6 +21,7 @@ import javax.swing.JLabel;
 public class selectDevice extends javax.swing.JFrame {
 
     User user;
+    Timer timer ;
 
     /**
      * Creates new form Login
@@ -86,7 +92,44 @@ public class selectDevice extends javax.swing.JFrame {
             case 5:
                 break;
         }
+         timer = new Timer();		
+         timer.schedule(new TickTimerTask(), 0, 100000); 
+
     }
+    
+                class TickTimerTask extends TimerTask{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			notification();
+		}
+		
+	}
+               public void notification(){
+                  
+//                   System.out.println(user.getRefrigerator());
+                    Date datenow = new Date();
+                    boolean stop = true;
+                   for(Models.Refrigerator i : user.getRefrigerator()){
+                       for(Models.addItem j : i.getItem()){
+                           if( (j.getExp().getYear() < datenow.getYear() || ((j.getExp().getMonth() < datenow.getMonth()) &&  j.getExp().getYear() == datenow.getYear()) || ((j.getExp().getDate() < datenow.getDate())&& j.getExp().getMonth() == datenow.getMonth())) && stop ){
+//                               System.out.println(j.getItem().getName() + i.getRefrig_name());
+                               int n = JOptionPane.showConfirmDialog(null, "Would you like green eggs and ham?", "An Inane Question",   JOptionPane.YES_NO_OPTION);
+//                               System.out.println(n);
+                               if(n == 0){
+                                   this.dispose();
+                                   new showOutofDate(user).setVisible(true);
+                                   stop = false;
+                               }else{
+                               timer.cancel();
+                               stop = false;
+                               }
+                           }
+
+                       }
+                   }
+               }
 
     private void setIconLabel(JLabel label, Models.Refrigerator refrid) {
 
@@ -459,9 +502,11 @@ public class selectDevice extends javax.swing.JFrame {
     private void bnt_item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_item1ActionPerformed
         // TODO add your handling code here:
         if(user.getRefrigerator().size() >= 1){
+            timer.cancel();
             this.dispose();
             new editDevice(user, user.getRefrigerator().get(0)).setVisible(true);
         }else{
+            timer.cancel();
             this.dispose();
             new addDevice(user).setVisible(true);
         }
@@ -471,9 +516,11 @@ public class selectDevice extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
         if(user.getRefrigerator().size() >= 4){
+            timer.cancel();
             this.dispose();
             new deviceInfo(user, user.getRefrigerator().get(3)).setVisible(true);
         }else{
+            timer.cancel();
             this.dispose();
             new addDevice(user).setVisible(true);
         }
@@ -482,9 +529,11 @@ public class selectDevice extends javax.swing.JFrame {
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
         if(user.getRefrigerator().size() >= 3){
+            timer.cancel();
             this.dispose();
             new deviceInfo(user, user.getRefrigerator().get(2)).setVisible(true);
         }else{
+            timer.cancel();
             this.dispose();
             new addDevice(user).setVisible(true);
         }
@@ -493,9 +542,11 @@ public class selectDevice extends javax.swing.JFrame {
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
         if(user.getRefrigerator().size() >= 1){
+            timer.cancel();
             this.dispose();
             new deviceInfo(user, user.getRefrigerator().get(0)).setVisible(true);
         }else{
+            timer.cancel();
             this.dispose();
             new addDevice(user).setVisible(true);
         }
@@ -504,9 +555,11 @@ public class selectDevice extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
         if(user.getRefrigerator().size() >= 2){
+            timer.cancel();
             this.dispose();
             new deviceInfo(user, user.getRefrigerator().get(1)).setVisible(true);
         }else{
+            timer.cancel();
             this.dispose();
             new addDevice(user).setVisible(true);
         }
@@ -514,12 +567,14 @@ public class selectDevice extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
         this.dispose();
         new Edit_Profile(user).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -534,6 +589,7 @@ public class selectDevice extends javax.swing.JFrame {
 
     private void bnt_item2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_item2ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
         this.dispose();
       new editDevice(user, user.getRefrigerator().get(1)).setVisible(true);
         
@@ -541,12 +597,14 @@ public class selectDevice extends javax.swing.JFrame {
 
     private void bnt_item3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_item3ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
         this.dispose();
             new editDevice(user, user.getRefrigerator().get(2)).setVisible(true);
     }//GEN-LAST:event_bnt_item3ActionPerformed
 
     private void bnt_item4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_item4ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
         this.dispose();
             new editDevice(user, user.getRefrigerator().get(3)).setVisible(true);
     }//GEN-LAST:event_bnt_item4ActionPerformed
